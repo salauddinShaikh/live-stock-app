@@ -76,7 +76,7 @@ class App extends Component {
                       <tr key={index}>
                         <td>{item.toUpperCase()}</td>
                         <td style={{ backgroundColor: stocks[item].color }}>{stocks[item].price}</td>
-                        <td>
+                        <td style={{width:"150px"}}>
                           <TimeAgo
                             datetime={stocks[item].time}
                           />
