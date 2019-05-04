@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: beige;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #252a6e;
+}
+
+.topnav span {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.containers {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 25px auto;
+}
+.tables thead td,  .tables thead th {
+  border-bottom-width: 2px;
+}
+.tables  td, .tables th {
+  border: 1px solid #dee2e6;
+  height:40px;
+  text-align: center;
+}
+.tables{
+  margin: auto;
+  border: 1px solid #dee2e6;
+  width: 600px;
+  margin-bottom: 1rem;
+  color: #212529;
+}
