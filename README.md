@@ -1,7 +1,7 @@
 [![Build Status](https://api.travis-ci.org/salauddinShaikh/live-stock-app.svg?branch=master)](https://api.travis-ci.org/salauddinShaikh/live-stock-app)
 
 ### Demo
-
+<b>To check demo enable load unsafe script in your chrome browser<b><br>
 http://salauddinshaikh.github.io/live-stock-app/
 
 ### Deployment
