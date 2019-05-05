@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StockTable from './stockTable.component';
+import StockTable from './components/stockTable';
 import './App.css';
 
 let websocket;
@@ -22,9 +22,6 @@ class App extends Component {
   onError = (evt) => {
     this.setState({isSocketError:true});
     console.log('errr' + evt);
-  }
-  componentWillUnmount(){
-    websocket.onclose();
   }
   onMessage = ({ data }) => {
     let { stocks } = this.state;
@@ -51,7 +48,7 @@ class App extends Component {
         <div className="topnav">
           <span>Live Stocks App </span>
         </div>
-        <div className="containers">
+        <div className="container">
         {isSocketError && <h2 className="socket-error">Can't connect to server,try after some time</h2>}
         {!isSocketError && <StockTable stocks={stocks}/>}
         </div>

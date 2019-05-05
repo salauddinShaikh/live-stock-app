@@ -4,7 +4,7 @@ import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 export default function StockTable({ stocks }) {
     return (
-        <table className="tables">
+        <table className="table">
             <thead>
                 <tr>
                     <th>Ticker</th>

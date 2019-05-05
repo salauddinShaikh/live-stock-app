@@ -17,19 +17,19 @@ body {
   text-decoration: none;
   font-size: 20px;
 }
-.containers {
+.container {
   width: 100%;
   margin: 25px auto;
 }
-.tables thead td,  .tables thead th {
+.table thead td,  .table thead th {
   border-bottom-width: 2px;
 }
-.tables  td, .tables th {
+.table  td, .table th {
   border: 1px solid #dee2e6;
   height:40px;
   text-align: center;
 }
-.tables{
+.table{
   margin: auto;
   border: 1px solid #dee2e6;
   width: 600px;
