@@ -1,38 +1,31 @@
 import React, { Component } from 'react';
-import TimeAgo from 'timeago-react';
+import StockTable from './stockTable.component';
 import './App.css';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
-var websocket;
 
+let websocket;
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      stocks: {}
+      stocks: {},
+      isSocketError:false
     }
   }
   componentWillMount() {
-    this.testWebSocket();
+    this.openWebSocket();
   }
-  testWebSocket = () => {
+  openWebSocket = () => {
     websocket = new WebSocket('ws://stocks.mnet.website');
-    websocket.onopen = (evt) => { this.onOpen(evt) };
-    websocket.onclose = (evt) => { this.onClose(evt) };
     websocket.onmessage = (evt) => { this.onMessage(evt) };
     websocket.onerror = (evt) => { this.onError(evt) };
   }
   onError = (evt) => {
-    console.log('errr' + evt.data);
+    this.setState({isSocketError:true});
+    console.log('errr' + evt);
   }
-
-  onOpen = (evt) => {
-    console.log("WebSocket rocks");
+  componentWillUnmount(){
+    websocket.onclose();
   }
-
-  onClose = (evt) => {
-    console.log("DISCONNECTED");
-  }
-
   onMessage = ({ data }) => {
     let { stocks } = this.state;
     let stk = JSON.parse(data)
@@ -49,49 +42,18 @@ class App extends Component {
       }
       stocks[element[0]] = { price: parseFloat(element[1]).toFixed(2), color, time: Date.now(), priceHistory }
     });
-    this.setState({ stocks })
+    this.setState({ stocks,isSocketError:false })
   }
   render() {
-    const { stocks } = this.state
+    const { stocks,isSocketError } = this.state
     return (
       <React.Fragment>
         <div className="topnav">
           <span>Live Stocks App </span>
         </div>
         <div className="containers">
-          <div >
-            <table className="tables">
-              <thead>
-                <tr>
-                  <th>Ticker</th>
-                  <th>Price</th>
-                  <th>Last Update</th>
-                  <th>Price Graph</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  Object.keys(stocks).map((item, index) => {
-                    return (
-                      <tr key={index}>
-                        <td>{item.toUpperCase()}</td>
-                        <td style={{ backgroundColor: stocks[item].color }}>{stocks[item].price}</td>
-                        <td style={{width:"150px"}}>
-                          <TimeAgo
-                            datetime={stocks[item].time}
-                          />
-                        </td>
-                        <td>
-                          <Sparklines data={stocks[item].priceHistory} width={100} height={20}  limit={20}>
-                            <SparklinesLine color="#56b45d" style={{ fill: "#56b45d" }} />
-                          </Sparklines>
-                        </td>
-                      </tr>
-                    )
-                  })}
-              </tbody>
-            </table>
-          </div>
+        {isSocketError && <h2 className="socket-error">Can't connect to server,try after some time</h2>}
+        {!isSocketError && <StockTable stocks={stocks}/>}
         </div>
       </React.Fragment>
     )
