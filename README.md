@@ -6,7 +6,7 @@ http://salauddinshaikh.github.io/live-stock-app/
 
 ### Deployment
 
-Intergrated with Travis CI : https://api.travis-ci.org/salauddinShaikh/live-stock-app
+Intergrated with Travis CI : https://travis-ci.org/salauddinShaikh/live-stock-app
 
 ## Available Scripts
 
