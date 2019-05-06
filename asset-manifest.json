@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/live-stock-app/static/css/main.3853ca5a.chunk.css",
+    "main.js": "/live-stock-app/static/js/main.b0083c8e.chunk.js",
+    "main.js.map": "/live-stock-app/static/js/main.b0083c8e.chunk.js.map",
+    "runtime~main.js": "/live-stock-app/static/js/runtime~main.73fdb926.js",
+    "runtime~main.js.map": "/live-stock-app/static/js/runtime~main.73fdb926.js.map",
+    "static/js/2.349baeb1.chunk.js": "/live-stock-app/static/js/2.349baeb1.chunk.js",
+    "static/js/2.349baeb1.chunk.js.map": "/live-stock-app/static/js/2.349baeb1.chunk.js.map",
+    "index.html": "/live-stock-app/index.html",
+    "precache-manifest.ee7dd6bec7f499c7e5847c9da8fdf2ce.js": "/live-stock-app/precache-manifest.ee7dd6bec7f499c7e5847c9da8fdf2ce.js",
+    "service-worker.js": "/live-stock-app/service-worker.js",
+    "static/css/main.3853ca5a.chunk.css.map": "/live-stock-app/static/css/main.3853ca5a.chunk.css.map"
+  }
+}
